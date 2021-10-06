@@ -23,7 +23,7 @@ function displayHoroscope(){
             wind.innerHTML=healthValue
                 
         })
-    })}
+    }
 
 function previousButton  () {
     previousButton.addEventListener("click",function(){
@@ -41,7 +41,7 @@ function previousButton  () {
                     
             })
         })}
-}
+
 
 function nextButton  () {
     nextButton.addEventListener("click",function(){
@@ -59,7 +59,7 @@ function nextButton  () {
                     
             })
         })}
-}
+
 
 function getParameters (){
     var parameters = document.location.search.split (&);
