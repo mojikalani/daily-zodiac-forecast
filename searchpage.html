@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
+<body >
     <!-- <div class="divider"> -->
         <div class="row">
-            <h1 class="col s3">Zodiac Horoscope</h1>
+            <h1 class="col s3 deep-purple-text darken-1-text">Zodiac Horoscope</h1>
             <div class="col s3"></div>
             <img class="col s6" src="https://www.publicdomainpictures.net/pictures/40000/velka/astrology-chart-zodiac-signs.jpg"></img>
         </div>
@@ -21,27 +21,28 @@
         <form class="col s12" action="./searchpage.html">
           <div class="row">
             <div class="input-field col s6">
-              <input placeholder="City Name" id="month" type="text" class="validate">
-              <label for="location">City Name</label>
+              <input placeholder="City Name" id="cityname" type="text" class="validate font-adj">
+              <label for="cityname" class="deep-purple-text font-adj">City Name</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s2">
-              <input placeholder="Month" id="month" type="text" class="validate">
-              <label for="first_name">Month</label>
+              <input placeholder="Month" id="month" type="text" class="validate font-adj">
+              <label for="month" class="deep-purple-text font-adj">Month</label>
             </div>
             <div class="input-field col s2">
-              <input id="day" type="text" class="validate" placeholder="Day">
-              <label for="last_name">Day</label>
+              <input id="day" type="text" class="validate font-adj" placeholder="Day">
+              <label for="day" class="deep-purple-text font-adj">Day</label>
             </div>
             <div class="input-field col s2">
-                <input id="year" type="text" class="validate" placeholder="Year">
-                <label for="last_name">Year</label>
+                <input id="year" type="text" class="validate font-adj" placeholder="Year">
+                <label for="year" class="deep-purple-text font-adj">Year</label>
               </div>
           </div>
         </form>
-    </div>
-      
+    </div>   
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="./script.js"></script>
 </html>
