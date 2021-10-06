@@ -6,11 +6,11 @@ var previousButton = document.getElementById('');
 
 let apikey= "88503906b02b071fb3edb90dc301ba75"
 id = 617815
-api = "https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:"+zodiacValue""
+api = "https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:"+zodiacValue
 
 function displayHoroscope(){
-    searchButton.addhttps://json.astrologyapi.com/v1/western_horoscopeEventListener("click",function(){
-    fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:"+zodiacValue"")
+    //searchButton.addhttps://json.astrologyapi.com/v1/western_horoscopeEventListener("click",function(){
+    fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:"+zodiacValue)
         .then((response) => {
         })
         .then(data => {
@@ -23,11 +23,11 @@ function displayHoroscope(){
             wind.innerHTML=healthValue
                 
         })
-    })}
+    }
 
 function previousButton  () {
     previousButton.addEventListener("click",function(){
-        fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/previous/:"+zodiacValue"")
+        fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/previous/:"+zodiacValue)
             .then((response) => {
             })
             .then(data => {
@@ -41,11 +41,11 @@ function previousButton  () {
                     
             })
         })}
-}
+
 
 function nextButton  () {
     nextButton.addEventListener("click",function(){
-        fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/next/:"+zodiacValue"")
+        fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/next/:"+zodiacValue)
             .then((response) => {
             })
             .then(data => {
@@ -59,10 +59,10 @@ function nextButton  () {
                     
             })
         })}
-}
+
 
 function getParameters (){
-    var parameters = document.location.search.split (&);
+   // var parameters = document.location.search.split(&);
     console.log(parameters)
     var querySearch= parameters[0].split("="[1]);
     console.log(querySearch);
@@ -138,7 +138,82 @@ if (zodiacSearches) {
     zodiacSearches= [];
 }
 //Clear search history
-clearHistory.addEventListener("click", function() {
+// clearHistory.addEventListener("click", function() {
+//     zodiacSearches= [];
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------------------------------------------------------
+var zodiacSearches= [];
+var citySearch = document.querySelector("#cityName");
+var monthSearch= docuement.querySelector("#month");
+var daySearch = docuement.querySelector("#day");
+var yearSearch = docuement.querySelector("#year");
+
+//var clearHistory = document.querySelector("#clear-history");
+// Will display a previous zodiac as a "button"
+var button = document.querySelector("#button");
+
+function displayLHoroscope() {
+    button.setAttribute("button", "button");
+    zodiacSearches.append(button);
+}
+// "query" will be the string that the user will input in the form page for location
+function addZodiacSign(query) {
+    zodiacSearches.push(query);
+    localStorage.setItem("zodiac-search", JSON.stringify(zodiacSearches));
+    displayLHoroscope();
+}
+zodiacSearches = localStorage.getItem("zodiac-search");
+if (zodiacSearches) {
+    zodiacSearches = JSON.parse(zodiacSearches);
+} else {
     zodiacSearches= [];
-});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
