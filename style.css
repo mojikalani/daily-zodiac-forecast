@@ -1,0 +1,12 @@
+img {
+    height: 40rem;
+    width: 10rem;
+}
+
+.container {
+    max-width: unset;
+}
+
+ul {
+    font-size: 2rem;
+}
