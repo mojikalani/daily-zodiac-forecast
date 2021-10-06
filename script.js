@@ -142,3 +142,89 @@ clearHistory.addEventListener("click", function() {
     zodiacSearches= [];
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------------------------------------------
+var monthInput = document.querySelector('#month')
+var cityInput = document.querySelector('#cityname')
+var dayInput = document.querySelector('#day')
+var yearInput = document.querySelector('#year')
+var zodiactitle = document.querySelector('#zodiactitle')
+var info1El = document.querySelector('#info1')
+var info2El = document.querySelector('#info2')
+var compatibilityEl = document.querySelector('#compatibility')
+var prevsearchlist = document.querySelector('#prev-searches')
