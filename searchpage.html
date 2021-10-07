@@ -8,44 +8,51 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
+<body >
     <!-- <div class="divider"> -->
         <div class="row">
-            <h1 class="col s3">Zodiac Horoscope</h1>
+            <h1 class="col s3 deep-purple-text darken-1-text">Zodiac Horoscope</h1>
             <div class="col s3"></div>
             <img class="col s6" src="https://www.publicdomainpictures.net/pictures/40000/velka/astrology-chart-zodiac-signs.jpg"></img>
         </div>
     <!-- </div> -->
 
-    <div class="row">
+   <div class="row">
         <form id="search-form" class="col s12" action="./forecastpage.html">
           <div class="row">
             <div class="input-field col s6">
-              <input placeholder="City Name" id="cityName" type="text" class="validate">
-              <label for="cityName">City Name</label>
+              <input placeholder="City Name" id="cityname" type="text" class="validate font-adj">
+              <label for="cityname" class="deep-purple-text font-adj">City Name</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s2">
-              <input placeholder="Month" id="month" type="text" class="validate">
-              <label for="month">Month</label>
+              <input placeholder="Month" id="month" type="text" class="validate font-adj">
+              <label for="month" class="deep-purple-text font-adj">Month</label>
             </div>
             <div class="input-field col s2">
-              <input id="day" type="text" class="validate" placeholder="Day">
-              <label for="day">Day</label>
+              <input id="day" type="text" class="validate font-adj" placeholder="Day">
+              <label for="day" class="deep-purple-text font-adj">Day</label>
             </div>
             <div class="input-field col s2">
-                <input id="year" type="text" class="validate" placeholder="Year">
-                <label for="year">Year</label>
-              </div>
+                <input id="year" type="text" class="validate font-adj" placeholder="Year">
+                <label for="year" class="deep-purple-text font-adj">Year</label>
+            </div>
+          </div>
               <button id="submit" type="submit" class="btn btn-primary btn-block mt-3">Enter</button>
           </div>
         </form>
+
+    </div>   
+
     </div>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="script.js"></script>
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="./script.js"></script>
 </html>
