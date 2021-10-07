@@ -4,7 +4,9 @@ var searchButton = document.getElementById('');
 var nextButton = document.getElementById('');
 var previousButton = document.getElementById('');
 
-//let apikey= "88503906b02b071fb3edb90dc301ba75"
+const apiKey= "88503906b02b071fb3edb90dc301ba75";
+const inputVal= input.value;
+const url= 
 //id = 617815
 //api = "https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:"+zodiacValue""
 
@@ -78,9 +80,12 @@ clearHistory.addEventListener("click", function() {
     zodiacSearches= [];
 });
 
-function displayHoroscope(){
-    searchButton.addEventListener("click",function(){
-    fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:"+zodiacValue)
+function searchAPIHoroscope(){
+    searchButton.addEventListener("submit", e => {
+        e.preventDefault();
+        const inputVal=input.value
+    
+    fetch("https://json.astrologyapi.com/v1/romantic_forecast_report/tropical"+)
         .then((response) => {
         })
         .then(data => {
@@ -97,7 +102,7 @@ function displayHoroscope(){
 
 function previousButton  () {
     previousButton.addEventListener("click",function(){
-        fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/previous/:"+zodiacValue"")
+        fetch("https://json.astrologyapi.com/v1/romantic_forecast_report/tropical"+)
             .then((response) => {
             })
             .then(data => {
@@ -115,7 +120,7 @@ function previousButton  () {
 
 function nextButton  () {
     nextButton.addEventListener("click",function(){
-        fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/next/:"+zodiacValue"")
+        fetch("https://json.astrologyapi.com/v1/romantic_forecast_report/tropical"+)
             .then((response) => {
             })
             .then(data => {
@@ -141,5 +146,56 @@ function getParameters (){
     getSearchResult(querySearch, format)
 
   
+}
+
+
+
+
+
+//Get values from parameters 
+const form = document.querySelector (".row");
+
+function myFunction() {
+    var elements = document.getElementById("myForm").elements;
+    var obj ={};
+    for(var i = 0 ; i < elements.length ; i++){
+        var item = elements.item(i);
+        obj[item.name] = item.value;
+    }
+
+    document.getElementById("demo").innerHTML = JSON.stringify(obj);
+}
+
+//function displayHoroscope(){
+//let horoscopeCardHTML =
+//<h2>Horoscope</h2> 
+//<div id= "horoscope" class= "d-inline-flex flex-wrap>";
+//horoscopeCardHTML =</div>
+//$(zodiacSearches).html(horoscopeCardHTML);
+//dailyHoroscope();
+
+
+function getZodiacSearch(){
+    var x= document.getElementById("myForm").elements[0];
+
+}
+//append form input value to the action url as path 
+function changeURL(){
+    var x = document.getElementById('userInput').value.trim();
+    var url = document.getElementById('url');
+    lnk.href = "https://json.astrologyapi.com/v1/romantic_forecast_report/tropical" + x;
+    window.location = "https://json.astrologyapi.com/v1/romantic_forecast_report/tropical" + x;
+  }
+}
+
+
+//output data into the HTML 
+function displayHoroscope(data) {
+    const zodiac = data.zodiac [0];
+    const zodiacHealth = document.getElementById("zodiac");
+    const zodiacName = zodiac.strZodiac;
+    const heading = document.createElement (<div></div>)
+    heading.innterHTML = zodiacName 
+    zodiacDiv.appendChild (heading);
 }
 
