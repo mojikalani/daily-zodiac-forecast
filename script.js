@@ -21,10 +21,10 @@ function displayHoroscope(){
             containerCity.innerHTML= zodiacValue
             temperature.innerHTML=emotionsValue
             wind.innerHTML=healthValue
-                
+        
         })
     }
-
+displayLHoroscope();
 function previousButton  () {
     previousButton.addEventListener("click",function(){
         fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/previous/:"+zodiacValue)
@@ -195,14 +195,9 @@ function searchValues() {
     localStorage.setItem("userValues", JSON.stringify(zodiacSearches));
     getValues()
 }
- localStorage
 
-document.getElementById("submit").addEventListener('click', searchValues);
-function myFunction() { 
-    var x = localStorage.getItem("userValues")
-    console.log(x)
-}
-myFunction(); 
+
+
 
 const apiKey= "88503906b02b071fb3edb90dc301ba75";
 const inputVal= input.value;
@@ -230,7 +225,7 @@ function getAPIHoroscope(){
             // report.innerHTML=reportVal
                 
         })
-    }
+    
                                   
     //get form input value                           
     function getZodiacSearch(){
