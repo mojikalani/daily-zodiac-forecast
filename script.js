@@ -170,30 +170,35 @@ if (zodiacSearches) {
 // ------------------------------------------------------------------------
 var zodiacSearches= [];
 var citySearch = document.querySelector("#cityName");
-var monthSearch= docuement.querySelector("#month");
-var daySearch = docuement.querySelector("#day");
-var yearSearch = docuement.querySelector("#year");
+var monthSearch = document.querySelector("#month");
+var daySearch = document.querySelector("#day"); 
+var yearSearch = document.querySelector("#year");
+var form = document.querySelector("#form");
 
-//var clearHistory = document.querySelector("#clear-history");
 // Will display a previous zodiac as a "button"
 var button = document.querySelector("#button");
 
-function displayLHoroscope() {
-    button.setAttribute("button", "button");
-    zodiacSearches.append(button);
+function searchValues() {
+     
+    let values = { 
+        cityname: document.getElementById("cityName").value,
+        month: document.getElementById("month").value,
+        day: document.getElementById("day").value, 
+        year: document.getElementById("year").value,
+    };
+    zodiacSearches.push(values);
+    
+
+
+    localStorage.setItem("userValues", JSON.stringify(zodiacSearches));
 }
-// "query" will be the string that the user will input in the form page for location
-function addZodiacSign(query) {
-    zodiacSearches.push(query);
-    localStorage.setItem("zodiac-search", JSON.stringify(zodiacSearches));
-    displayLHoroscope();
+document.getElementById("submit").addEventListener('click', searchValues);
+function myFunction() { 
+    var x = localStorage.getItem("userValues")
+    console.log(x)
 }
-zodiacSearches = localStorage.getItem("zodiac-search");
-if (zodiacSearches) {
-    zodiacSearches = JSON.parse(zodiacSearches);
-} else {
-    zodiacSearches= [];
-}
+myFunction(); 
+
 
 
 
