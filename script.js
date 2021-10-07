@@ -4,10 +4,9 @@ var searchButton = document.getElementById('');
 var nextButton = document.getElementById('');
 var previousButton = document.getElementById('');
 
-<<<<<<< HEAD
 const apiKey= "88503906b02b071fb3edb90dc301ba75";
 const inputVal= input.value;
-const url= 
+const url= "	https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
 //id = 617815
 //api = "https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:"+zodiacValue""
 
@@ -81,31 +80,45 @@ clearHistory.addEventListener("click", function() {
     zodiacSearches= [];
 });
 
-function searchAPIHoroscope(){
+function changeURL(){
+    var x = document.getElementById('userInput').value.trim();
+    var url = document.getElementById('url');
+    lnk.href = "https://json.astrologyapi.com/v1/romantic_forecast_report/tropical" + x;
+    window.location = "https://json.astrologyapi.com/v1/romantic_forecast_report/tropical" + x;
+  }
+
+
+
+
+//function searchAPIHoroscope(){
     searchButton.addEventListener("submit", e => {
         e.preventDefault();
         const inputVal=input.value
-    
-    fetch("https://json.astrologyapi.com/v1/romantic_forecast_report/tropical"+)
-=======
-let apikey= "88503906b02b071fb3edb90dc301ba75"
-id = 617815
-api = "https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:"+zodiacValue
 
-function displayHoroscope(){
-    //searchButton.addhttps://json.astrologyapi.com/v1/western_horoscopeEventListener("click",function(){
-    fetch("https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:"+zodiacValue)
->>>>>>> 5a83bcbb474303d09fd880972ca00fea9cb26c87
+const apiKey= "88503906b02b071fb3edb90dc301ba75";
+const inputVal= input.value;
+const url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
+
+
+function getAPIHoroscope(){
+    searchButton.addEventListener("click",function(){
+    fetch("https://json.astrologyapi.com/v1/general_sign_report/tropical/:"+inputVal)
         .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error ("NETWORK RESPONSE ERROR");
+            }
         })
         .then(data => {
-            var zodiacValue = data ['sun_sign'];
-            var emotionsValue = data['emotions'];
-            var healthValue = data ['health'];
+            console.log(data)
+            var zodiacValue = data ['sign_name'];
+            var planetValue = data['planet_name'];
+            var reportValue = data ['report'];
 
             containerCity.innerHTML= zodiacValue
-            temperature.innerHTML=emotionsValue
-            wind.innerHTML=healthValue
+            temperature.innerHTML=planetValue
+            wind.innerHTML=reportValue
                 
         })
     }
@@ -353,7 +366,6 @@ function changeURL(){
     lnk.href = "https://json.astrologyapi.com/v1/romantic_forecast_report/tropical" + x;
     window.location = "https://json.astrologyapi.com/v1/romantic_forecast_report/tropical" + x;
   }
-}
 
 
 //output data into the HTML 
