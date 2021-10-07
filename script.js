@@ -246,15 +246,19 @@ function getAPIHoroscope(){
 
         //display output data into the HTML 
         function displayHoroscope(data) {
-            const zodiac = data.zodiac [0];
-            const zodiacDiv = document.getElementById("search-form");
-            const zodiacName = inputVal;
-            const heading = document.createElement ("h1");
-            heading.innterHTML = zodiacName 
-            zodiacDiv.appendChild (heading);
-
-            const planetVal = document.createElement("ul");
-            const zodiacDiv= zodiacDiv.appendChild(planetVal);  
+            const li = document.createElement("li");
+            li.classList.add("zodiac");
+            const markup= `
+                <h2 class="zodiac-name" data-name="${sign_name}">
+                <span>${sign_name}</span>
+                </h2>
+                <div class="planet_name" data-name= "${planet_name}">
+                </div>
+                <div class="report" data-name="${report}"></div>
+                `;
+            li.innerHTML = markup;
+            list.appendChild(li);
+            
         }
         
 
