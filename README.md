@@ -23,8 +23,10 @@ Contributors and their respective github profiles
 
  Bridegette Quiambao
 [GitHub](https://github.com/bridgettequiambao)
+
 Kalani Mojica
 [GitHub](https://github.com/mojikalani)
+
 Mitchell Riley
 [GitHub](http://github.com/pherenzia)
 
