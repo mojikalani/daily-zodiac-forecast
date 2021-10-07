@@ -101,8 +101,11 @@ fetch(reqCoordinate)
         var lon = data[0].lon;
         console.log(lat)
         console.log(lon)
+        localStorage.setItem("lat", lat); 
+        localStorage.setItem('lon', lon)
         // Gathering Time Zone
         var reqTimeZone = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + weatherApiKey;
+        
         fetch(reqTimeZone)
         .then(function (response){
             return response.json();
@@ -111,9 +114,11 @@ fetch(reqCoordinate)
         console.log(data)
         var timeZone = data.timezone;
         console.log(timeZone)
+        localStorage.setItem("timeZone", timeZone)
     })
     })
 }
+
 searchLocation();
 // ----------- Section for storing the user searches ---------------
 // Array for storing the zodiac search.
@@ -137,10 +142,9 @@ if (zodiacSearches) {
 } else {
     zodiacSearches= [];
 }
-//Clear search history
+
 // clearHistory.addEventListener("click", function() {
-//     zodiacSearches= [];
-// });
+
 
 
 
@@ -187,11 +191,12 @@ function searchValues() {
         year: document.getElementById("year").value,
     };
     zodiacSearches.push(values);
-    
-
 
     localStorage.setItem("userValues", JSON.stringify(zodiacSearches));
+    getValues()
 }
+ localStorage
+
 document.getElementById("submit").addEventListener('click', searchValues);
 function myFunction() { 
     var x = localStorage.getItem("userValues")
@@ -330,7 +335,18 @@ function getAPIHoroscope(){
 
 
 
+// function getValues() { 
+//     var retrievedData = localStorage.getItem("userValues"); 
+//     var data = JSON.parse(retrievedData); 
+//     var birthday = data[0].month + " "+  data[0].day + " "+ data[0].year;
+//     console.log(data);
+//     console.log(retrievedData)
+//     console.log(data[0].cityname); 
+//     console.log(birthday);
+    
+// } 
 
+document.getElementById("submit").addEventListener('click', searchValues);
 
 
 
