@@ -64,6 +64,8 @@ function getValues() {
         document.querySelector('#zodiactitle').textContent = sign
         document.querySelector('#info1').textContent = data.date_range
         document.querySelector('#info2').textContent = data.description
+        document.querySelector('#info3').textContent = data.lucky_number
+        document.querySelector('#info4').textContent= data.compatibility
 
         console.log(data);
         }
