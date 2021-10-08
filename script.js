@@ -351,7 +351,7 @@ function changeURL(event){
 // function myFunction() { 
 //     var x = localStorage.getItem("userValues")
 //     console.log(x)
-// }
+ }
 // myFunction(); 
 
 //var apiKey= "88503906b02b071fb3edb90dc301ba75";
