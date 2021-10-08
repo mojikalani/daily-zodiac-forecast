@@ -241,34 +241,22 @@ function changeURL(event){
             .then(data => {
                 console.log(data)
                 displayHoroscope(data)
-                var inputVal = data ['sign_name'];
-                var planetVal = data['planet_name'];
-                var reportVal = data ['report'];
-                
-                // containerZodiac.innerHTML= inputVal
-                // planet.innerHTML= planetVal
-                // report.innerHTML=reportVal
                 
             })
         })}
         
-        //display output data into the HTML 
-        function displayHoroscope(data) {
-            const zodiac = data.zodiac [0];
-            var zodiacDiv = document.getElementById("search-form");
-            const zodiacName = inputVal;
-            const heading = document.createElement ("h1");
-            heading.innterHTML = zodiacName 
-            zodiacDiv.appendChild (heading);
-            
-            const planetVal = document.createElement("ul");
-            var zodiacDiv= zodiacDiv.appendChild(planetVal);  
-        }
-        
-        
-        function getZodiacSearch(){
-            var x= document.getElementById("myForm").elements[0];
-        }
+    //display output data into the HTML 
+    function displayHoroscope (data){
+            var displayHoroscope= document.getElementById("zodiac-info2").innerHTML
+            displayHoroscope.innerHTML=
+            var inputVal = data ['sign_name'];
+            var planetVal = data['planet_name'];
+            var reportVal = data ['report'];
+
+            containerZodiac.innerHTML= inputVal
+            planet.innerHTML= planetVal
+            report.innerHTML= reportVal
+            }
         
         
         
