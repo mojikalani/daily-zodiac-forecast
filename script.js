@@ -233,7 +233,7 @@ document.getElementById("submit").addEventListener('click', searchValues);
 
 var apiKey= "88503906b02b071fb3edb90dc301ba75";
 //var inputVal= input.value;
-const url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
+var url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
 
 //get API data 
 function getAPIHoroscope(){
@@ -308,12 +308,7 @@ function getAPIHoroscope(){
     }
 
     //append form input value to the action url as path 
-    function changeURL(){
-        var inputVal = document.getElementById('userInput').value.trim();
-        var url = document.getElementById('url');
-        lnk.href = "https://json.astrologyapi.com/v1/general_sign_report/tropical/:" + inputVal;
-        window.location = "https://json.astrologyapi.com/v1/general_sign_report/tropical/:" + inputVal;
-    }
+   
 
 
 
@@ -325,22 +320,13 @@ function myFunction() {
 }
 myFunction(); 
 
-var apiKey= "88503906b02b071fb3edb90dc301ba75";
-var inputVal= input
-var url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
+// var apiKey= "88503906b02b071fb3edb90dc301ba75";
+// var inputVal= input
+// var url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
 
 
 
 
-
-function changeURL(event){
-    event.preventDefault();
-    var monthInput = document.querySelector('#month').value
-    var dayInput = document.querySelector('#day').value
-    var yearInput = document.querySelector('#year').value
-    var latdata = localStorage.getItem('lat')
-    var londata = localStorage.getItem('lon')
-    var timeZonedata = localStorage.getItem('timeZone')
 
 
 
@@ -601,11 +587,11 @@ var prevsearchlist = document.querySelector('#prev-searches')
             var info2El = document.querySelector('#info2')
             var compatibilityEl = document.querySelector('#compatibility')
             var prevsearchlist = document.querySelector('#prev-searches')
-            let lat = '';
-            let lon = '';
-            let timeZone = '';
+            // let lat = '';
+            // let lon = '';
+            // let timeZone = '';
+            // var input = [dayInput, monthInput, yearInput, lat, lon, timeZone]
             var searchForm = document.querySelector('#search-form')
-            var input = [dayInput, monthInput, yearInput, lat, lon, timeZone]
             
             searchForm.addEventListener('submit', changeURL);    
 

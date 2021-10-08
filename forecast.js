@@ -6,10 +6,10 @@ function getValues() {
     var zoneData = localStorage.getItem("timeZone"); 
     console.log(data);
     
-    console.log(data[0].city); 
-    console.log(data[0].month);
-    console.log(data[0].day);
-    console.log(data[0].year);
+    // console.log(data[0].city); 
+    // console.log(data[0].month);
+    // console.log(data[0].day);
+    // console.log(data[0].year);
 
     // ---- Geolocator values ------
     console.log(latData);
