@@ -4,6 +4,7 @@ var searchButton = document.getElementById('');
 var nextButton = document.getElementById('');
 var previousButton = document.getElementById('');
 
+
 //let apikey= "88503906b02b071fb3edb90dc301ba75"
 // id = 617815
 // api = "https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:"+zodiacValue
@@ -25,6 +26,7 @@ var previousButton = document.getElementById('');
 //         })
 //     }
 // displayLHoroscope();
+
 // apikey= "88503906b02b071fb3edb90dc301ba75"
 // id = 617815
 // api = "https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:"+zodiacValue
@@ -224,6 +226,7 @@ function searchValues() {
     localStorage.setItem("userValues", JSON.stringify(zodiacSearches));
     searchLocation();
 }
+
 //searchValues();
 document.getElementById("submit").addEventListener('click', searchValues);
 
@@ -292,7 +295,29 @@ function getAPIHoroscope(){
 
 
 
+// document.getElementById("submit").addEventListener('click', searchValues);
+function myFunction() { 
+    var x = localStorage.getItem("userValues")
+    console.log(x)
+}
+myFunction(); 
 
+var apiKey= "88503906b02b071fb3edb90dc301ba75";
+var inputVal= input
+var url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
+
+
+
+
+
+function changeURL(event){
+    event.preventDefault();
+    var monthInput = document.querySelector('#month').value
+    var dayInput = document.querySelector('#day').value
+    var yearInput = document.querySelector('#year').value
+    var latdata = localStorage.getItem('lat')
+    var londata = localStorage.getItem('lon')
+    var timeZonedata = localStorage.getItem('timeZone')
 
 
 
@@ -345,6 +370,7 @@ function changeURL(event){
     var londata = localStorage.getItem('lon')
     var timeZonedata = localStorage.getItem('timeZone')
 
+
     var queryString = 
     './forecastpage.html?q=' + dayInput + '=' + monthInput +  '=' + yearInput +  '=' + latdata + '=' + londata + '=' + timeZonedata; 
     console.log(queryString)
@@ -352,6 +378,7 @@ function changeURL(event){
     console.log(dayInput, monthInput, yearInput)
     };
     
+
 // } 
 
 
@@ -383,6 +410,7 @@ var info1El = document.querySelector('#info1')
 var info2El = document.querySelector('#info2')
 var compatibilityEl = document.querySelector('#compatibility')
 var prevsearchlist = document.querySelector('#prev-searches')
+
     
     function getAPIHoroscope(){
         searchButton.addEventListener("click",function(){
@@ -516,7 +544,9 @@ var prevsearchlist = document.querySelector('#prev-searches')
             
             // } 
             
+
           
+
             
             
             
@@ -537,20 +567,22 @@ var prevsearchlist = document.querySelector('#prev-searches')
             
             
             
-            // //------------------------------------------------------------
-            // var cityInput = document.querySelector('#cityname')
-            // var monthInput = document.querySelector('#month').value
-            // var dayInput = document.querySelector('#day').value
-            // var yearInput = document.querySelector('#year').value
-            // var zodiactitle = document.querySelector('#zodiactitle')
-            // var info1El = document.querySelector('#info1')
-            // var info2El = document.querySelector('#info2')
-            // var compatibilityEl = document.querySelector('#compatibility')
-            // var prevsearchlist = document.querySelector('#prev-searches')
-            // let lat = '';
-            // let lon = '';
-            // let timeZone = '';
-            // var searchForm = document.querySelector('#search-form')
-            // var input = [dayInput, monthInput, yearInput, lat, lon, timeZone]
+
+            //------------------------------------------------------------
+            var cityInput = document.querySelector('#cityname')
+            var monthInput = document.querySelector('#month').value
+            var dayInput = document.querySelector('#day').value
+            var yearInput = document.querySelector('#year').value
+            var zodiactitle = document.querySelector('#zodiactitle')
+            var info1El = document.querySelector('#info1')
+            var info2El = document.querySelector('#info2')
+            var compatibilityEl = document.querySelector('#compatibility')
+            var prevsearchlist = document.querySelector('#prev-searches')
+            let lat = '';
+            let lon = '';
+            let timeZone = '';
+            var searchForm = document.querySelector('#search-form')
+            var input = [dayInput, monthInput, yearInput, lat, lon, timeZone]
             
-            // searchForm.addEventListener('submit', changeURL)
+            searchForm.addEventListener('submit', changeURL);    
+
