@@ -83,11 +83,16 @@ var locationSearch; // = code from html for the location form menu
 //          searchInput.val("");
 //      }
 // }
-// ---- searching user location and time zone
+// ---- searching user location and time zone ----- 
+var city = document.querySelector("#cityname");
+var searchFormEl = document.querySelector("#search-form");
+
 function searchLocation() {
+
+    var citySearchVal = document.querySelector("#cityname").value;
     // --- Placeholder for the query for search form
-    var location = "Tokyo"
-    var query = location.trim();
+    // var location = "mexico"
+    var query = citySearchVal.trim();
     // ----------------------------------------------
     var reqCoordinate = "http://api.openweathermap.org/geo/1.0/direct?q=" + query + "&appid=" + weatherApiKey;
     console.log(reqCoordinate)
@@ -118,30 +123,33 @@ fetch(reqCoordinate)
     })
     })
 }
+searchFormEl.addEventListener('click', searchLocation);
 
-searchLocation();
+// document.getElementById("submit").addEventListener('click', searchValues);
+
+
 // ----------- Section for storing the user searches ---------------
 // Array for storing the zodiac search.
-var zodiacSearches= [];
-var clearHistory = document.querySelector("#clear-history");
-// Will display a previous zodiac as a "button"
-var button = document.querySelector("#button");
-function displayLHoroscope() {
-    button.setAttribute("button", "button");
-    zodiacSearches.append(button);
-}
+// var zodiacSearches= [];
+// var clearHistory = document.querySelector("#clear-history");
+// // Will display a previous zodiac as a "button"
+// var button = document.querySelector("#button");
+// function displayLHoroscope() {
+//     button.setAttribute("button", "button");
+//     zodiacSearches.append(button);
+// }
 // "query" will be the string that the user will input in the form page for location
-function addZodiacSign(query) {
-    zodiacSearches.push(query);
-    localStorage.setItem("zodiac-search", JSON.stringify(zodiacSearches));
-    displayLHoroscope();
-}
-zodiacSearches = localStorage.getItem("zodiac-search");
-if (zodiacSearches) {
-    zodiacSearches = JSON.parse(zodiacSearches);
-} else {
-    zodiacSearches= [];
-}
+// function addZodiacSign(query) {
+//     zodiacSearches.push(query);
+//     localStorage.setItem("zodiac-search", JSON.stringify(zodiacSearches));
+//     displayLHoroscope();
+// }
+// zodiacSearches = localStorage.getItem("zodiac-search");
+// if (zodiacSearches) {
+//     zodiacSearches = JSON.parse(zodiacSearches);
+// } else {
+//     zodiacSearches= [];
+// }
 
 // clearHistory.addEventListener("click", function() {
 
@@ -173,7 +181,7 @@ if (zodiacSearches) {
 
 // ------------------------------------------------------------------------
 var zodiacSearches= [];
-var citySearch = document.querySelector("#cityName");
+//var citySearch = document.querySelector("#cityname");
 var monthSearch = document.querySelector("#month");
 var daySearch = document.querySelector("#day"); 
 var yearSearch = document.querySelector("#year");
@@ -185,7 +193,7 @@ var button = document.querySelector("#button");
 function searchValues() {
      
     let values = { 
-        cityname: document.getElementById("cityName").value,
+        city: city.value,
         month: document.getElementById("month").value,
         day: document.getElementById("day").value, 
         year: document.getElementById("year").value,
@@ -193,9 +201,8 @@ function searchValues() {
     zodiacSearches.push(values);
 
     localStorage.setItem("userValues", JSON.stringify(zodiacSearches));
-    getValues()
+    searchLocation();
 }
- localStorage
 
 // document.getElementById("submit").addEventListener('click', searchValues);
 function myFunction() { 
@@ -207,8 +214,13 @@ myFunction();
 var apiKey= "88503906b02b071fb3edb90dc301ba75";
 var inputVal= input
 var url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
+//searchValues();
+document.getElementById("submit").addEventListener('click', searchValues);
 
 
+var apiKey= "88503906b02b071fb3edb90dc301ba75";
+//var inputVal= input.value;
+const url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
 
 
 function changeURL(event){
@@ -398,3 +410,4 @@ function changeURL(event){
             var input = [dayInput, monthInput, yearInput, lat, lon, timeZone]
             
             searchForm.addEventListener('submit', changeURL);    
+
