@@ -248,6 +248,7 @@ function getAPIHoroscope(){
         })
         .then(data => {
             console.log(data)
+            displayHoroscope(data)
             var inputVal = data ['sign_name'];
             var planetVal = data['planet_name'];
             var reportVal = data ['report'];
@@ -257,6 +258,48 @@ function getAPIHoroscope(){
             // report.innerHTML=reportVal
                 
         })
+    })}
+
+        //display output data into the HTML 
+        // function displayHoroscope(data) {
+        //     const zodiac = data.zodiac [0];
+        //     const zodiacDiv = document.getElementById("search-form");
+        //     const zodiacName = inputVal;
+        //     const heading = document.createElement ("h1");
+        //     heading.innterHTML = zodiacName 
+        //     zodiacDiv.appendChild (heading);
+
+            // const planetVal = document.createElement("ul");
+            // const zodiacDiv= zodiacDiv.appendChild(planetVal); 
+            // const li = document.createElement ("li");
+            // li.classList.add("planet"); 
+
+            // const li = document.createElement("li");
+            // li.classList.add("zodiac");
+            // const markup= `
+            //     <h2 class="zodiac-name" data-name="${sign_name}">
+            //     <span>${sign_name}</span>
+            //     </h2>
+            //     <div class="planet_name" data-name= "${planet_name}">
+            //     </div>
+            //     <div class="report" data-name="${report}"></div>
+            //     `;
+            // li.innerHTML = markup;
+            // list.appendChild(li);
+            
+
+            function displayHoroscope (data){
+            var displayHoroscope= document.getElementById("zodiac-info2").textContent
+            
+            var inputVal = data ['sign_name'];
+            var planetVal = data['planet_name'];
+            var reportVal = data ['report'];
+
+            info1El.textContent= inputVal
+            info2El.textContent= planetVal
+            compatibilityEl.textContent= reportVal
+            }
+            
     
                                   
     //get form input value                           
@@ -271,26 +314,6 @@ function getAPIHoroscope(){
         lnk.href = "https://json.astrologyapi.com/v1/general_sign_report/tropical/:" + inputVal;
         window.location = "https://json.astrologyapi.com/v1/general_sign_report/tropical/:" + inputVal;
     }
-    
-    
-    //output data into the HTML 
-    function displayHoroscope(data) {
-        const zodiac = data.zodiac [0];
-        const zodiacDiv = document.getElementById("search-form");
-        const zodiacName = inputVal;
-        const heading = document.createElement ("h1");
-        heading.innterHTML = zodiacName 
-        zodiacDiv.appendChild (heading);
-    }
-}) 
-}  
-
-
-
-
-
-
-
 
 
 
