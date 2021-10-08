@@ -18,40 +18,40 @@ function getValues() {
 
     var monthVal = data[0].month
     
-    if(monthVal = 1) {
+    if(monthVal = 4) {
        var sign = "aries"
      }
-    if(monthVal = 2) {
+    if(monthVal = 5) {
         var sign = 'taurus'
      }
-     if(monthVal = 3) {
+     if(monthVal = 6) {
         var sign = 'gemini'
      }
-     if(monthVal = 4) {
+     if(monthVal = 7) {
         var sign = 'cancer'
      }
-     if(monthVal = 5) {
+     if(monthVal = 8) {
         var sign = 'leo'
      }
-     if(monthVal = 6) {
+     if(monthVal = 9) {
         var sign = 'virgo'
      }
-     if(monthVal = 7) {
+     if(monthVal = 10) {
         var sign = 'libra'
      }
-     if(monthVal = 8) {
+     if(monthVal = 11) {
         var sign = 'scorpio'
      }
-     if(monthVal = 9) {
+     if(monthVal = 12) {
         var sign = 'sagittarius'
      }
-     if(monthVal = 10) {
+     if(monthVal = 1) {
         var sign = 'capricorn'
      }
-     if(monthVal = 11) {
+     if(monthVal = 2) {
         var sign = 'aquarius'
      }
-     if(monthVal = 12) {
+     if(monthVal = 3) {
         var sign = 'pisces'
      }
 
