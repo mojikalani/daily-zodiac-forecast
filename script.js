@@ -233,7 +233,7 @@ document.getElementById("submit").addEventListener('click', searchValues);
 
 var apiKey= "88503906b02b071fb3edb90dc301ba75";
 //var inputVal= input.value;
-const url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
+var url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
 
 //get API data 
 function getAPIHoroscope(){
@@ -326,7 +326,7 @@ function myFunction() {
 myFunction(); 
 
 var apiKey= "88503906b02b071fb3edb90dc301ba75";
-var inputVal= input
+//var inputVal= input
 var url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
 
 
@@ -374,7 +374,7 @@ function changeURL(event){
 // function myFunction() { 
 //     var x = localStorage.getItem("userValues")
 //     console.log(x)
-// }
+ }
 // myFunction(); 
 
 //var apiKey= "88503906b02b071fb3edb90dc301ba75";
@@ -457,7 +457,8 @@ var prevsearchlist = document.querySelector('#prev-searches')
                 // report.innerHTML=reportVal
                 
             })
-        })}
+        })
+    }
         
         //display output data into the HTML 
         function displayHoroscope(data) {
@@ -592,20 +593,19 @@ var prevsearchlist = document.querySelector('#prev-searches')
             
 
             //------------------------------------------------------------
-            var cityInput = document.querySelector('#cityname')
-            var monthInput = document.querySelector('#month').value
-            var dayInput = document.querySelector('#day').value
-            var yearInput = document.querySelector('#year').value
-            var zodiactitle = document.querySelector('#zodiactitle')
-            var info1El = document.querySelector('#info1')
-            var info2El = document.querySelector('#info2')
-            var compatibilityEl = document.querySelector('#compatibility')
-            var prevsearchlist = document.querySelector('#prev-searches')
-            let lat = '';
-            let lon = '';
-            let timeZone = '';
-            var searchForm = document.querySelector('#search-form')
-            var input = [dayInput, monthInput, yearInput, lat, lon, timeZone]
+            // var cityInput = document.querySelector('#cityname')
+            // var monthInput = document.querySelector('#month').value
+            // var dayInput = document.querySelector('#day').value
+            // var yearInput = document.querySelector('#year').value
+            // var zodiactitle = document.querySelector('#zodiactitle')
+            // var info1El = document.querySelector('#info1')
+            // var info2El = document.querySelector('#info2')
+            // var compatibilityEl = document.querySelector('#compatibility')
+            // var prevsearchlist = document.querySelector('#prev-searches')
+            // //let lat = '';
+            // //let lon = '';
+            // //let timeZone = '';
+             var searchForm = document.querySelector('#search-form')
+            // //var input = [dayInput, monthInput, yearInput, lat, lon, timeZone]
             
-            searchForm.addEventListener('submit', changeURL);    
-
+            searchForm.addEventListener('submit', changeURL);
