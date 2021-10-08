@@ -17,12 +17,12 @@
         </div>
     <!-- </div> -->
 
-    <div class="row">
-        <form class="col s12" action="./searchpage.html">
+   <div class="row">
+        <form id="search-form" class="col s12" action="./forecastpage.html">
           <div class="row">
             <div class="input-field col s6">
               <input placeholder="City Name" id="cityname" type="text" class="validate font-adj">
-              <label for="cityname" class="deep-purple-text font-adj">City Name</label>
+              <label for="cityname" id="cityname" class="deep-purple-text font-adj">City Name</label>
             </div>
           </div>
           <div class="row">
@@ -37,10 +37,20 @@
             <div class="input-field col s2">
                 <input id="year" type="text" class="validate font-adj" placeholder="Year">
                 <label for="year" class="deep-purple-text font-adj">Year</label>
-              </div>
+            </div>
+          </div>
+              <button id="submit" type="submit" class="btn btn-primary btn-block mt-3">Enter</button>
           </div>
         </form>
+
     </div>   
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="script.js"></script>
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
