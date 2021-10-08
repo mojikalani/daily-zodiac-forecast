@@ -204,6 +204,97 @@ function searchValues() {
     searchLocation();
 }
 
+//searchValues();
+document.getElementById("submit").addEventListener('click', searchValues);
+
+
+var apiKey= "88503906b02b071fb3edb90dc301ba75";
+//var inputVal= input.value;
+var url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
+
+//get API data 
+function getAPIHoroscope(){
+    searchButton.addEventListener("click",function(){
+    fetch("https://json.astrologyapi.com/v1/general_sign_report/tropical/:"+inputVal)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error ("NETWORK RESPONSE ERROR");
+            }
+        })
+        .then(data => {
+            console.log(data)
+            displayHoroscope(data)
+            var inputVal = data ['sign_name'];
+            var planetVal = data['planet_name'];
+            var reportVal = data ['report'];
+
+            // containerZodiac.innerHTML= inputVal
+            // planet.innerHTML= planetVal
+            // report.innerHTML=reportVal
+                
+        })
+    })}
+
+        //display output data into the HTML 
+        // function displayHoroscope(data) {
+        //     const zodiac = data.zodiac [0];
+        //     const zodiacDiv = document.getElementById("search-form");
+        //     const zodiacName = inputVal;
+        //     const heading = document.createElement ("h1");
+        //     heading.innterHTML = zodiacName 
+        //     zodiacDiv.appendChild (heading);
+
+            // const planetVal = document.createElement("ul");
+            // const zodiacDiv= zodiacDiv.appendChild(planetVal); 
+            // const li = document.createElement ("li");
+            // li.classList.add("planet"); 
+
+            // const li = document.createElement("li");
+            // li.classList.add("zodiac");
+            // const markup= `
+            //     <h2 class="zodiac-name" data-name="${sign_name}">
+            //     <span>${sign_name}</span>
+            //     </h2>
+            //     <div class="planet_name" data-name= "${planet_name}">
+            //     </div>
+            //     <div class="report" data-name="${report}"></div>
+            //     `;
+            // li.innerHTML = markup;
+            // list.appendChild(li);
+            
+
+            function displayHoroscope (data){
+            var displayHoroscope= document.getElementById("zodiac-info2").textContent
+            
+            var inputVal = data ['sign_name'];
+            var planetVal = data['planet_name'];
+            var reportVal = data ['report'];
+
+            info1El.textContent= inputVal
+            info2El.textContent= planetVal
+            compatibilityEl.textContent= reportVal
+            }
+            
+    
+                                  
+    //get form input value                           
+    function getZodiacSearch(){
+        var x= document.getElementById("myForm").elements[0];
+    }
+
+    //append form input value to the action url as path 
+    function changeURL(){
+        var inputVal = document.getElementById('userInput').value.trim();
+        var url = document.getElementById('url');
+        lnk.href = "https://json.astrologyapi.com/v1/general_sign_report/tropical/:" + inputVal;
+        window.location = "https://json.astrologyapi.com/v1/general_sign_report/tropical/:" + inputVal;
+    }
+
+
+
+
 // document.getElementById("submit").addEventListener('click', searchValues);
 function myFunction() { 
     var x = localStorage.getItem("userValues")
@@ -212,15 +303,64 @@ function myFunction() {
 myFunction(); 
 
 var apiKey= "88503906b02b071fb3edb90dc301ba75";
-var inputVal= input
+//var inputVal= input
 var url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
 //searchValues();
 document.getElementById("submit").addEventListener('click', searchValues);
 
 
-var apiKey= "88503906b02b071fb3edb90dc301ba75";
-//var inputVal= input.value;
-const url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
+
+
+
+function changeURL(event){
+    event.preventDefault();
+    var monthInput = document.querySelector('#month').value
+    var dayInput = document.querySelector('#day').value
+    var yearInput = document.querySelector('#year').value
+    var latdata = localStorage.getItem('lat')
+    var londata = localStorage.getItem('lon')
+    var timeZonedata = localStorage.getItem('timeZone')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// document.getElementById("submit").addEventListener('click', searchValues);
+// function myFunction() { 
+//     var x = localStorage.getItem("userValues")
+//     console.log(x)
+ }
+// myFunction(); 
+
+//var apiKey= "88503906b02b071fb3edb90dc301ba75";
+//var inputVal= input
+//var url= "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName"
+
+
 
 
 function changeURL(event){
@@ -262,7 +402,8 @@ function changeURL(event){
                 // report.innerHTML=reportVal
                 
             })
-        })}
+        })
+    }
         
         //display output data into the HTML 
         function displayHoroscope(data) {
@@ -394,20 +535,19 @@ function changeURL(event){
             
             
             //------------------------------------------------------------
-            var cityInput = document.querySelector('#cityname')
-            var monthInput = document.querySelector('#month').value
-            var dayInput = document.querySelector('#day').value
-            var yearInput = document.querySelector('#year').value
-            var zodiactitle = document.querySelector('#zodiactitle')
-            var info1El = document.querySelector('#info1')
-            var info2El = document.querySelector('#info2')
-            var compatibilityEl = document.querySelector('#compatibility')
-            var prevsearchlist = document.querySelector('#prev-searches')
-            let lat = '';
-            let lon = '';
-            let timeZone = '';
-            var searchForm = document.querySelector('#search-form')
-            var input = [dayInput, monthInput, yearInput, lat, lon, timeZone]
+            // var cityInput = document.querySelector('#cityname')
+            // var monthInput = document.querySelector('#month').value
+            // var dayInput = document.querySelector('#day').value
+            // var yearInput = document.querySelector('#year').value
+            // var zodiactitle = document.querySelector('#zodiactitle')
+            // var info1El = document.querySelector('#info1')
+            // var info2El = document.querySelector('#info2')
+            // var compatibilityEl = document.querySelector('#compatibility')
+            // var prevsearchlist = document.querySelector('#prev-searches')
+            // //let lat = '';
+            // //let lon = '';
+            // //let timeZone = '';
+             var searchForm = document.querySelector('#search-form')
+            // //var input = [dayInput, monthInput, yearInput, lat, lon, timeZone]
             
-            searchForm.addEventListener('submit', changeURL);    
-
+            searchForm.addEventListener('submit', changeURL);
