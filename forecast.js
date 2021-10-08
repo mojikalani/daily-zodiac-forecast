@@ -64,10 +64,9 @@ function getValues() {
         success:function(data){
         document.querySelector('#zodiactitle').textContent = sign
         document.querySelector('#info1').textContent = data.date_range
-        document.querySelector('#info2').textContent = data.description
-        document.querySelector('#info3').textContent = data.lucky_number
-        document.querySelector('#info4').textContent= data.compatibility
-
+        document.querySelector('#info2').textContent = "Horoscope: " + data.description
+        document.querySelector('#info3').textContent = "Today's lucky number: "+ data.lucky_number
+        document.querySelector('#info4').textContent= "Most compatible zodiac sign: " + data.compatibility
         console.log(data);
         }
     });
